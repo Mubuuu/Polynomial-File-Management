@@ -3,7 +3,7 @@ import credentials from "../credentials.json" assert { type: "json" };
 
 const auth = new google.auth.GoogleAuth({
   credentials,
-  scopes: ["https://www.googleapis.com/auth/drive.file"],
+  scopes: [process.env.SCOPES],
 });
 
 const drive = google.drive({ version: "v3", auth });

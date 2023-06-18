@@ -6,7 +6,7 @@ import { deleteFiles } from "../utils/deleteAllfiles.js";
 
 const auth = new google.auth.GoogleAuth({
   credentials,
-  scopes: ["https://www.googleapis.com/auth/drive.file"],
+  scopes: [process.env.SCOPES],
 });
 
 const drive = google.drive({ version: "v3", auth });

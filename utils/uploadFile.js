@@ -4,7 +4,7 @@ export const uploadFileToDrive = async (file) => {
     const drive = google.drive({ version: "v3", auth });
     const fileMetadata = {
       name: file.originalname,
-      parents: ["1LUjjP_ac5BtZ5DpWNhn3gxhYGpaV5gWi"],
+      parents: [process.env.DRIVE_PATH],
     };
     const media = {
       mimeType: file.mimeType,
