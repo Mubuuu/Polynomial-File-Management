@@ -10,8 +10,6 @@ const drive = google.drive({ version: "v3", auth });
 
 export const shareFileWithGmailUsers = async (req, res) => {
   const { fileId, emailAddresses } = req.body;
-  console.log(fileId);
-  console.log(emailAddresses);
 
   const permissionIDs = {};
   for (let i = 0; i < emailAddresses.length; i++) {

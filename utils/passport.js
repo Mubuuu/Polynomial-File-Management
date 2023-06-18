@@ -4,12 +4,10 @@ import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import { CLIENT_ID, CLIENT_SECRET_ID, CallBackURL } from "./constants.js";
 
 passport.serializeUser(function(user, done) {
-  console.log(user,'serialize')
   done(null, user);
 });
 
 passport.deserializeUser(function(user, done) {
-  console.log(user,'deserialize')
     done(null, user);
 });
 

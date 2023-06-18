@@ -1,7 +1,6 @@
 import { google } from "googleapis";
 import credentials from "../credentials.json" assert { type: "json" };
 import { uploadFileToDrive } from "../utils/uploadFile.js";
-import { deleteFiles } from "../utils/deleteAllfiles.js";
 
 
 const auth = new google.auth.GoogleAuth({
@@ -40,14 +39,3 @@ export const getAllFiles = async (req, res) => {
     res.status(500).send("Error retrieving files");
   }
 };
-
-export const deleteAllFiles = async(req,res)=>{
-  const response = await drive.files.list({
-    pageSize: 1000,
-    fields: "files(id, name)",
-  });
-
-  const files = response.data.files;
-
-  const result = await deleteFiles(files)
-}
